@@ -1,95 +1,72 @@
+:root {
+    --chalkboard-bg: #2C3531;
+    --chalkboard-text: #D1E8E2;
+    --chalkboard-border: #D1E8E2;
+    --chalkboard-shadow: rgba(0,0,0,0.2);
+    --accent: #ff5252;
+    --accent-dark: #c62828;
+    --accent-sub: #2196f3;
+    --accent-sub-dark: #0d47a1;
+    --bg: #f8f8f8;
+    --shadow: rgba(0,0,0,.15);
+    --radius: 0.35rem;
+    
+    /* Social Media Colors */
+    --facebook: #3b5998;
+    --facebook-dark: #2d4373;
+    --twitter: #1da1f2;
+    --twitter-dark: #0d8ecf;
+    --linkedin: #0077b5;
+    --linkedin-dark: #005582;
+    --pinterest: #e60023;
+    --pinterest-dark: #b3001b;
+    --whatsapp: #25d366;
+    --whatsapp-dark: #128c7e;
+    --reddit: #ff5700;
+    --reddit-dark: #d35400;
+    --telegram: #0088cc;
+    --telegram-dark: #006699;
+    --email: #7f8c8d;
+    --email-dark: #5d6d6e;
+}
 
-        :root {
-            --chalkboard-bg: #2C3531;
-            --chalkboard-text: #D1E8E2;
-            --chalkboard-border: #D1E8E2;
-            --chalkboard-shadow: rgba(0,0,0,0.2);
-            --accent: #ff5252;
-            --accent-dark: #c62828;
-            --accent-sub: #2196f3;
-            --accent-sub-dark: #0d47a1;
-            --bg: #f8f8f8;
-            --shadow: rgba(0,0,0,.15);
-            --radius: 0.35rem;
-        }
-        
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #f5f7fa;
-            padding: 0;
-            font-family: 'Nanum Pen Script', cursive;
-        }
-        
-        /* Navbar Styles */
-        .chalkboard-nav {
-            background-color: var(--chalkboard-bg);
-            border-bottom: 3px solid var(--chalkboard-border);
-            box-shadow: 0 4px 0 var(--chalkboard-shadow);
-            padding: 15px 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-title {
-            color: var(--chalkboard-text);
-            font-family: 'Nanum Pen Script', cursive;
-            font-size: 32px;
-            margin: 0;
-            text-shadow: 2px 2px 0 var(--chalkboard-shadow);
-            letter-spacing: 1px;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-        
-        .nav-link {
-            color: var(--chalkboard-text);
-            text-decoration: none;
-            font-family: 'Nanum Pen Script', cursive;
-            font-size: 24px;
-            padding: 5px 15px;
-            border-radius: 4px;
-            text-shadow: 1px 1px 0 var(--chalkboard-shadow);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .nav-link:hover {
-            background-color: rgba(209, 232, 226, 0.2);
-            transform: translateY(2px);
-        }
-        
-        .nav-link.active {
-            background-color: rgba(209, 232, 226, 0.3);
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 15%;
-            width: 70%;
-            height: 2px;
-            background-color: var(--chalkboard-text);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            transform: scaleX(1);
-        }
-        
-        /* Chalk texture */
-        .chalkboard-nav {
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 90%),
-                radial-gradient(circle at 80% 30%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 90%);
-        }
+/* Font Face for Embedded Icons */
+@font-face {
+    font-family: 'Font Awesome';
+    font-style: normal;
+    font-weight: 900;
+    src: url("data:font/woff2;charset=utf-8;base64,d09GMgABAAAAAA4wABEAAAAAHzQAA...") format('woff2');
+}
+
+body {
+    margin: 0;
+    background: #f5f7fa;
+    padding: 0;
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+/* Navbar Styles */
+.chalkboard-nav {
+    background-color: var(--chalkboard-bg);
+    border-bottom: 3px solid var(--chalkboard-border);
+    box-shadow: 0 4px 0 var(--chalkboard-shadow);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 90%),
+        radial-gradient(circle at 80% 30%, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.05) 90%);
+}
+
+.nav-title {
+    color: var(--chalkboard-text);
+    font-size: 32px;
+    margin: 0;
+    text-shadow: 2px 2px 0 var(--chalkboard-shadow);
+    letter-spacing: 1px;
+}
+
         
         /* Button Container Styles */
         .content {
@@ -170,17 +147,89 @@
         .light { background: #f5f5f5; color: #212121; }
         .light:hover { background: #e0e0e0; }
 
-        .facebook { background: #3b5998; color: white; }
-.facebook::before {
-    content: "\f39e"; /* Facebook Unicode */
+        .btn-social {
+    position: relative;
+    padding: 12px 24px 12px 50px;
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 20px;
+    border: 2px solid;
+    border-radius: var(--radius);
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 0 var(--chalkboard-shadow);
+    transition: all 0.3s ease;
+    color: white !important;
 }
-        .twitter { background: #1da1f2; color: white; }
-        .linkedin { background: #0077b5; color: white; }
-        .pinterest { background: #e60023; color: white; }
-        .whatsapp { background: #25d366; color: white; }
-        .reddit { background: #ff5700; color: white; }
-        .telegram { background: #0088cc; color: white; }
-        .email { background: #7f8c8d; color: white; }
+
+.btn-social::before {
+    font-family: 'Font Awesome';
+    font-weight: 900;
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.btn-facebook {
+    background: var(--facebook);
+    border-color: var(--facebook-dark);
+}
+.btn-facebook::before { content: '\f39e'; }
+
+.btn-twitter {
+    background: var(--twitter);
+    border-color: var(--twitter-dark);
+}
+.btn-twitter::before { content: '\f099'; }
+
+.btn-linkedin {
+    background: var(--linkedin);
+    border-color: var(--linkedin-dark);
+}
+.btn-linkedin::before { content: '\f0e1'; }
+
+.btn-pinterest {
+    background: var(--pinterest);
+    border-color: var(--pinterest-dark);
+}
+.btn-pinterest::before { content: '\f231'; }
+
+.btn-whatsapp {
+    background: var(--whatsapp);
+    border-color: var(--whatsapp-dark);
+}
+.btn-whatsapp::before { content: '\f232'; }
+
+.btn-reddit {
+    background: var(--reddit);
+    border-color: var(--reddit-dark);
+}
+.btn-reddit::before { content: '\f1a1'; }
+
+.btn-telegram {
+    background: var(--telegram);
+    border-color: var(--telegram-dark);
+}
+.btn-telegram::before { content: '\f2c6'; }
+
+.btn-email {
+    background: var(--email);
+    border-color: var(--email-dark);
+}
+.btn-email::before { content: '\f0e0'; }
+
+.btn-social:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0 var(--chalkboard-shadow);
+}
+.btn-facebook:hover { background: var(--facebook-dark); }
+.btn-twitter:hover { background: var(--twitter-dark); }
+.btn-linkedin:hover { background: var(--linkedin-dark); }
+.btn-pinterest:hover { background: var(--pinterest-dark); }
+.btn-whatsapp:hover { background: var(--whatsapp-dark); }
+.btn-reddit:hover { background: var(--reddit-dark); }
+.btn-telegram:hover { background: var(--telegram-dark); }
+.btn-email:hover { background: var(--email-dark); }
 
         /* Search Bar Styles */
         .search-container {
