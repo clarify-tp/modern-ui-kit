@@ -171,6 +171,9 @@
         .light:hover { background: #e0e0e0; }
 
         .facebook { background: #3b5998; color: white; }
+.facebook::before {
+    content: "\f39e"; /* Facebook Unicode */
+}
         .twitter { background: #1da1f2; color: white; }
         .linkedin { background: #0077b5; color: white; }
         .pinterest { background: #e60023; color: white; }
